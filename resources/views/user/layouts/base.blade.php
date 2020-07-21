@@ -139,7 +139,10 @@
     <script src="{{url('/assets/libs/js/main-js.js')}}"></script>
     <!-- chart chartist js -->
     <script src="{{url('/assets/vendor/charts/charts-bundle/Chart.bundle.js')}}"></script>
-    <script src="{{url('/assets/vendor/charts/charts-bundle/chartjs.js')}}"></script>
+    
+
+    <!-- ajax -->
+    <script src="{{url('/js/jquery-3.5.1.min.js')}}"></script>
 
     <!-- Create Modal Form -->
     <form action="/home" method="POST">
@@ -167,4 +170,5 @@
         </div>
     </form>
 </body>
+<script src="{{url('/assets/vendor/charts/charts-bundle/chartjs.js')}}"></script>
 </html>

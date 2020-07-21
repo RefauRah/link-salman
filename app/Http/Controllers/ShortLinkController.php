@@ -25,10 +25,15 @@ class ShortLinkController extends Controller
     {        
         $data = ShortLink::select('*')->where('user_id', Auth::user()->id)->latest()->get();
         $short = ShortLink::select('*')->where('user_id', Auth::user()->id)->latest()->get();
-
+        
         return view ('user.content.dashboard', compact('data','short'));
         
                 
+    }
+    
+    public function charts(){
+        $data = ClicksHistory::all();
+        return response()->json($data);
     }
 
     /**
@@ -135,6 +140,5 @@ class ShortLinkController extends Controller
         $short = ShortLink::where('code','like',"%".$search."%")->paginate();
         return view ('user.layouts.base', ['data' => $data, 'short' => $short]);
         echo "test";
-    }   
-
+    }
 }

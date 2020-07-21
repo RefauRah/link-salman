@@ -63,17 +63,22 @@
 
 
             if ($('#chartjs_bar').length) {
+                var clicks = new Array();
+                $.getJSON('/charts', function (data) {
+                    clicks.push(data);
+                });
+                console.log(clicks);
                 var ctx = document.getElementById("chartjs_bar").getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: ["M", "T", "W", "R", "F", "S", "S"],
                         datasets: [{
-                            label: 'Total Clicks',
-                            data: [12, 19, 3, 17, 28, 24, 7],
+                           label: 'Total Clicks',
+                           data: clicks,
                            backgroundColor: "rgba(89, 105, 255,0.5)",
-                                    borderColor: "rgba(89, 105, 255,0.7)",
-                            borderWidth: 2
+                           borderColor: "rgba(89, 105, 255,0.7)",
+                           borderWidth: 2
                         }]
                     },
                     options: {

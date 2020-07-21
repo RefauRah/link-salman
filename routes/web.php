@@ -18,9 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('charts', 'ShortLinkController@charts');
+
 Route::resource('/home', 'ShortLinkController');
 
 Route::get('/search', 'ShortLinkController@search');
 
 Route::get('{code}', 'ShortLinkController@shortenLink')->name('shorten.link');
-
