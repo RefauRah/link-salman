@@ -24,7 +24,7 @@ class ShortLinkController extends Controller
     public function index()
     {        
         $data = ShortLink::select('*')->where('user_id', Auth::user()->id)->latest()->get();
-        $short = ShortLink::select('*')->where('user_id', Auth::user()->id)->latest()->get();
+        $short = ShortLink::select('*')->where('user_id', Auth::user()->id)->latest()->get();        
         
         return view ('user.content.dashboard', compact('data','short'));
         
