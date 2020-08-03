@@ -5,7 +5,7 @@
     {{csrf_field()}}
     {{ method_field('DELETE') }}
     <div class="page-header">
-        <h5>Created at {{$row->created_at}} | <a href="#">Reza Fauzi</a></h5>
+        <h5>Created at {{$row->created_at->diffForHumans()}} | <a href="#">{{Auth::user()->name}}</a></h5>
         <h2 class="pageheader-title">{{$row->link}} </h2>   
         <br>
         <h4>
@@ -20,7 +20,7 @@
         <br> <br>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Bar Charts</h5>
+                <h5 class="card-header">Chart</h5>
                 <div class="card-body">
                     <canvas id="chartjs_bar"></canvas>
                 </div>
